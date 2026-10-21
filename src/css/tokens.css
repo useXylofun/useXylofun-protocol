@@ -1,0 +1,120 @@
+/*
+  TOKENS: the only file in the project allowed to hold colour literals.
+
+  Palette provenance
+  Source A: brand/LOGO XYLO PNG...png (RGBA, 2000x2000, 8-bit, colour type 6).
+    Opaque pixels only (alpha 255, 319809 px). k-means, k=8, seed 7, 40 iterations,
+    every centroid snapped to the nearest real pixel; coordinates are x,y in the 2000px grid.
+      --c-deep      #145ef0  at 793,919
+      --c-blue      #2880fb  at 744,851
+      --c-azure     #49a7fd  at 664,1195
+      --c-cyan      #6cc3fd  at 1105,985
+      --c-sky       #89d0fd  at 773,861
+      --c-ice       #a9ddfd  at 1361,739
+      --c-mist      #caeafd  at 636,695
+      --c-frost     #eff8fd  at 684,649
+    Darkest opaque pixel of the X: #0236de at 995,1105 (--c-shade).
+    Lightest opaque pixel of the X: #ffffff at 814,701 (--c-white).
+  Source B: brand/LOGO XYLO PNG.png (RGB sky render). k-means, k=6, snapped to real pixels.
+      #1d86fc at 479,17   #f2f8fd at 282,0   #9fcefc at 1637,222
+      #c8e2fb at 1600,18  #74b7fc at 598,364  #4a9dfc at 336,40
+    These six are kept as sky-render tokens (--s-1 .. --s-6) for backgrounds.
+  Source C: reference/XYLO 1.jpg.jpeg, darkest pixel inside the headline box: #000000 at 560,311 (--c-black).
+  Every other colour below is derived with color-mix from the tokens above, never typed as a literal.
+*/
+
+:root {
+  color-scheme: light;
+
+  --c-deep: #145ef0;
+  --c-blue: #2880fb;
+  --c-azure: #49a7fd;
+  --c-cyan: #6cc3fd;
+  --c-sky: #89d0fd;
+  --c-ice: #a9ddfd;
+  --c-mist: #caeafd;
+  --c-frost: #eff8fd;
+  --c-shade: #0236de;
+  --c-white: #ffffff;
+  --c-black: #000000;
+
+  --s-1: #1d86fc;
+  --s-2: #f2f8fd;
+  --s-3: #9fcefc;
+  --s-4: #c8e2fb;
+  --s-5: #74b7fc;
+  --s-6: #4a9dfc;
+
+  /* roles */
+  --bg: var(--c-white);
+  --bg-raised: color-mix(in srgb, var(--c-frost) 70%, var(--c-white));
+  --ink: color-mix(in srgb, var(--c-black) 74%, var(--c-shade));
+  --text: color-mix(in srgb, var(--ink) 92%, var(--c-white));
+  --text-2: color-mix(in srgb, var(--ink) 74%, var(--c-white));
+  --text-3: color-mix(in srgb, var(--ink) 64%, var(--c-white));
+  --accent: var(--c-deep);
+  --accent-hi: var(--c-shade);
+  --accent-ink: var(--c-white);
+  --accent-soft: color-mix(in srgb, var(--c-deep) 10%, transparent);
+  --accent-bright: var(--c-blue);
+  --up: var(--c-deep);
+  --down: var(--ink);
+  --flash-up: color-mix(in srgb, var(--c-sky) 70%, transparent);
+  --flash-down: color-mix(in srgb, var(--ink) 18%, transparent);
+  --line: color-mix(in srgb, var(--c-deep) 14%, transparent);
+  --line-strong: color-mix(in srgb, var(--c-deep) 28%, transparent);
+  --glass: color-mix(in srgb, var(--c-white) 62%, transparent);
+  --glass-strong: color-mix(in srgb, var(--c-white) 82%, transparent);
+  --shadow-card: 0 1px 0 color-mix(in srgb, var(--c-white) 70%, transparent) inset,
+    0 18px 40px -22px color-mix(in srgb, var(--c-deep) 38%, transparent);
+  --shadow-pop: 0 24px 60px -24px color-mix(in srgb, var(--c-shade) 46%, transparent);
+  --spot: color-mix(in srgb, var(--c-white) 82%, transparent);
+  --skeleton-a: color-mix(in srgb, var(--c-deep) 7%, var(--c-white));
+  --skeleton-b: color-mix(in srgb, var(--c-deep) 15%, var(--c-white));
+
+  /* stage panels: gradient grounds, same recipe as measured on the reference (ellipse washes over a pale base) */
+  --stage-ice: radial-gradient(ellipse 43% 42% at -5% 30%, color-mix(in srgb, var(--c-white) 55%, transparent), transparent 78%),
+    radial-gradient(ellipse 43% 42% at 105% 30%, color-mix(in srgb, var(--c-mist) 70%, transparent), transparent 78%),
+    linear-gradient(180deg, var(--s-2), var(--c-mist));
+  --stage-azure: radial-gradient(ellipse 68% 45% at -4% -3%, color-mix(in srgb, var(--c-white) 60%, transparent) 0%, color-mix(in srgb, var(--c-white) 30%, transparent) 46%, transparent 77%),
+    radial-gradient(ellipse 70% 45% at 104% 100%, color-mix(in srgb, var(--c-deep) 38%, transparent), transparent 74%),
+    linear-gradient(180deg, var(--c-azure), var(--c-blue));
+  --stage-cyan: radial-gradient(ellipse 46% 30% at 104% 32%, color-mix(in srgb, var(--c-sky) 60%, transparent), transparent 74%),
+    radial-gradient(ellipse 80% 36% at 62% 57%, color-mix(in srgb, var(--c-cyan) 50%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--c-sky), var(--c-cyan));
+  --stage-air: radial-gradient(60% 70% at 12% 78%, color-mix(in srgb, var(--c-white) 95%, transparent) 0%, transparent 70%),
+    radial-gradient(45% 45% at 88% 18%, color-mix(in srgb, var(--c-white) 35%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--c-ice), var(--c-frost));
+
+  /* hero mesh blobs */
+  --mesh-1: var(--c-sky);
+  --mesh-2: var(--c-cyan);
+  --mesh-3: var(--c-ice);
+  --mesh-4: var(--c-azure);
+  --hero-ground: linear-gradient(180deg, var(--c-ice) 0%, var(--c-mist) 45%, var(--s-2) 80%, var(--c-white) 100%);
+
+  /* measured layout (reference: 1024 / 1440 viewports) */
+  --container: 896px;
+  --sec: clamp(96px, 7vw + 70px, 192px);
+  --gap: clamp(12px, 1.5vw, 20px);
+  --gap-head: clamp(48px, 4vw + 30.4px, 96px);
+  --col-gap: 24px;
+  --frame: clamp(8px, 1.1vw, 16px);
+  --panel-r: clamp(24px, 2.6vw, 36px);
+  --pad: clamp(20px, 4.4vw, 64px);
+  --stage-y: clamp(64px, 7.8vw, 112px);
+  --card-r: 24px;
+  --h1: clamp(44px, 8.8vw, 126.72px);
+  --h2: clamp(32px, 4.2vw, 60px);
+  --tap: 44px;
+
+  /* motion (reference: cubic-bezier(0.22, 1, 0.36, 1), 0.25 to 0.9 s, spring K 190 / C 21) */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 0.2s;
+  --t-mid: 0.45s;
+  --t-slow: 0.9s;
+
+  --font: "Host Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+}

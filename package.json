@@ -1,0 +1,18 @@
+{
+  "name": "xylo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "XYLO landing site",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs",
+    "measure": "node scripts/measure.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.0.0",
+    "puppeteer-core": "^24.0.0"
+  }
+}

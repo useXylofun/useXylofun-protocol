@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XYLO: cash in advance on equities you own</title>
+<meta name="description" content="XYLO lets you lock on-chain equities in a pool, collect an advance as each cycle opens, and stay exposed to price swings. Built with Solana.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="preload" href="fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/json" id="register">/*REGISTER*/</script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="top__bar">
+    <a class="brand" href="#hero" aria-label="XYLO, return to start"><img src="assets/logo-x-192.png" width="30" height="30" alt=""><span>XYLO</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#mechanics">Mechanics</a>
+      <a href="#payouts">Payouts</a>
+      <a href="#board">Board</a>
+      <a href="#compare">Compare</a>
+      <a href="#answers">Answers</a>
+    </nav>
+    <div class="socials" data-socials>
+      <span class="social" data-social="x" role="img" aria-disabled="true" aria-label="X, pending" title="X, pending"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+      <span class="social" data-social="github" role="img" aria-disabled="true" aria-label="GitHub, pending" title="GitHub, pending"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/></svg></span>
+    </div>
+  </div>
+  <div class="ca" data-slot="ca" data-state="absent">
+    <span class="ca__label" data-ca-label>Mint address</span>
+    <span class="ca__value" data-ca-value data-pending="true"><span class="ca__bar" aria-hidden="true"></span><span>pending</span></span>
+    <button class="copy" type="button" data-ca-copy disabled aria-disabled="true" aria-label="Copy mint address, pending">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span data-copy-text>Copy</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="hero" aria-labelledby="hero-h">
+  <div class="hero__mesh" aria-hidden="true">
+    <div class="blob blob--1" data-depth="0.3"></div>
+    <div class="blob blob--2" data-depth="0.45"></div>
+    <div class="blob blob--3" data-depth="0.6"></div>
+    <div class="blob blob--4" data-depth="0.8"></div>
+  </div>
+  <div class="layer layer--clouds-high" data-depth="0.5" aria-hidden="true"><img src="assets/clouds-high.webp" alt="" width="1600" height="420"></div>
+  <div class="hero__inner">
+    <p class="pill" data-feed="idle" data-reveal><span class="dot" aria-hidden="true"></span><span data-feed-text>Reaching the board</span></p>
+    <h1 id="hero-h" data-reveal>Your equities stay.<br>The cash lands first.</h1>
+    <p class="hero__sub" data-reveal>Park on-chain shares in a XYLO pool, collect an advance as each 7-day cycle opens, and ride the price the way you always did.</p>
+    <ul class="chips" data-reveal aria-label="Highlights">
+      <li class="chip">Solana</li><li class="chip">Cycle based</li><li class="chip">Early build</li>
+    </ul>
+  </div>
+  <div class="hero__art" aria-hidden="true">
+    <div class="hero__ring hero__ring--b" data-depth="0.2"></div>
+    <div class="hero__ring hero__ring--a" data-depth="0.35"></div>
+    <img class="hero__x" data-depth="1" src="assets/logo-x-768.png" srcset="assets/logo-x-384.png 384w, assets/logo-x-768.png 768w" sizes="(max-width: 700px) 60vw, 380px" width="768" height="768" alt="">
+  </div>
+  <div class="layer layer--clouds-low" data-depth="1.2" aria-hidden="true"><img src="assets/clouds-low.webp" alt="" width="1600" height="416"></div>
+</section>
+
+<div class="ticker" aria-label="Live Solana board ticker" id="ticker" role="region">
+  <div class="ticker__track" data-ticker><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span><span class="tick tick--skel sk" aria-hidden="true"></span></div>
+</div>
+
+<section class="stage stage--ice" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">Four lanes</p>
+      <h2 id="why-h">Dormant shares leave gains on the table.</h2>
+      <p class="lead">XYLO aims to put sleeping on-chain equities on a timetable instead of letting them gather dust.</p>
+    </div>
+    <ul class="grid grid--4" data-stagger>
+      <li class="card spot" data-reveal><h3>Steady advance</h3><p>The calm lane: modest cash in advance, with upside shared only beyond a line you choose.</p>
+        <dl class="stat" data-stat="mode-steady" data-state="absent"><dt class="stat__label">Advance rate</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot" data-reveal><h3>Patient bid</h3><p>Aim deeper. Cash arrives now, and shares change hands only should the price slip to your level.</p>
+        <dl class="stat" data-stat="mode-patient" data-state="absent"><dt class="stat__label">Advance rate</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot" data-reveal><h3>Two-step</h3><p>Alternate between both lanes, rolling from one into the other as each cycle wraps up.</p>
+        <dl class="stat" data-stat="mode-twostep" data-state="absent"><dt class="stat__label">Advance rate</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot" data-reveal><h3>Open desk</h3><p>Counterparties make offers for the upside you will release; the strongest offer sets your advance.</p>
+        <dl class="stat" data-stat="mode-desk" data-state="absent"><dt class="stat__label">Leading offer</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+    </ul>
+    <p class="note" data-reveal>Further out: a lane with a safety net underneath, and a basket lane that bundles several names into a single lock. Locked assets could later be turned into tokens of their own.</p>
+  </div>
+</section>
+
+<section class="stage stage--azure" id="cycles" aria-labelledby="cycles-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">Over time</p>
+      <h2 id="cycles-h">Cycle after cycle, it stacks.</h2>
+      <p class="lead">A ribbon covering a dozen rounds showing what one stake collected, one bar apiece.</p>
+    </div>
+    <div class="chart" data-reveal>
+      <div class="card spot">
+        <ol class="bars" data-bars data-state="absent" aria-label="Collected each cycle, pending">
+          <li><i></i><span>1</span></li><li><i></i><span>2</span></li><li><i></i><span>3</span></li><li><i></i><span>4</span></li><li><i></i><span>5</span></li><li><i></i><span>6</span></li><li><i></i><span>7</span></li><li><i></i><span>8</span></li><li><i></i><span>9</span></li><li><i></i><span>10</span></li><li><i></i><span>11</span></li><li><i></i><span>12</span></li>
+        </ol>
+      </div>
+      <div class="duo">
+        <div class="card spot"><dl class="stat" data-stat-derived="best" data-state="absent"><dt class="stat__label">Strongest cycle</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></div>
+        <div class="card spot"><dl class="stat" data-stat-derived="latest" data-state="absent"><dt class="stat__label">Most recent cycle</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></div>
+      </div>
+    </div>
+    <p class="note" data-reveal>Bars stay hollow until real cycles have closed. Nothing on this ribbon is a projection.</p>
+  </div>
+</section>
+
+<section class="stage stage--cyan" id="pulse" aria-labelledby="pulse-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">The whole pool</p>
+      <h2 id="pulse-h">One glance at the figures that matter.</h2>
+    </div>
+    <ul class="grid grid--4" data-stagger>
+      <li class="card spot tilebox" data-reveal><dl class="stat" data-stat="stat-locked" data-state="absent"><dt class="stat__label">Value locked</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot tilebox" data-reveal><dl class="stat" data-stat="stat-round" data-state="absent"><dt class="stat__label">Round volume</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot tilebox" data-reveal><dl class="stat" data-stat="stat-holders" data-state="absent"><dt class="stat__label">Participants</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot tilebox" data-reveal><dl class="stat" data-stat="stat-pools" data-state="absent"><dt class="stat__label">Open pools</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+    </ul>
+    <p class="note" data-reveal>Each tile fills in only when a real figure exists.</p>
+  </div>
+</section>
+
+<section class="stage stage--ice" id="mechanics" aria-labelledby="mech-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">Mechanics</p>
+      <h2 id="mech-h">Three actions each cycle.</h2>
+    </div>
+    <ol class="grid grid--3 steps" data-stagger>
+      <li class="card spot step" data-reveal><h3>Lock shares</h3><p>Send an on-chain equity into a pool. The price exposure of those shares stays with you.</p>
+        <dl class="stat" data-stat="step-lock" data-state="absent"><dt class="stat__label">Sample size</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot step" data-reveal><h3>Choose your reach</h3><p>Decide how much upside you will trade away. A wider reach returns a smaller advance and protects more of any rally.</p>
+        <dl class="stat" data-stat="step-reach" data-state="absent"><dt class="stat__label">Sample reach</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+      <li class="card spot step" data-reveal><h3>Collect the advance</h3><p>Cash lands as the cycle opens, while that cycle's end resolves the other side.</p>
+        <dl class="stat" data-stat="step-receive" data-state="absent"><dt class="stat__label">Sample advance</dt><dd class="stat__value" data-val>—</dd><span class="stat__state">pending</span></dl></li>
+    </ol>
+  </div>
+</section>
+
+<section class="stage stage--azure" id="payouts" aria-labelledby="pay-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">Payouts</p>
+      <h2 id="pay-h">What a stake could fetch.</h2>
+      <p class="lead">Choose a reach and scan across. Rows stay empty until real quotes exist.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Reach" data-reveal>
+      <button type="button" role="tab" id="tab-std" aria-selected="true" aria-controls="pay-tbl" data-tab="std">Standard reach</button>
+      <button type="button" role="tab" id="tab-wide" aria-selected="false" aria-controls="pay-tbl" data-tab="wide" tabindex="-1">Wide reach</button>
+    </div>
+    <div class="tbl" id="pay-tbl" role="tabpanel" aria-labelledby="tab-std" data-reveal data-table="payout-table" data-state="absent">
+      <div class="tr tr--head"><span>Asset group</span><span class="num">Typical move</span><span class="num" data-col-label>Advance</span></div>
+      <div class="tr spot" data-row><span>Large tech</span><span class="num" data-c="move">—</span><span class="num" data-c="adv">—</span></div>
+      <div class="tr spot" data-row><span>Volatile names</span><span class="num" data-c="move">—</span><span class="num" data-c="adv">—</span></div>
+      <div class="tr spot" data-row><span>Index trackers</span><span class="num" data-c="move">—</span><span class="num" data-c="adv">—</span></div>
+      <div class="tr spot" data-row><span>Commodity trackers</span><span class="num" data-c="move">—</span><span class="num" data-c="adv">—</span></div>
+    </div>
+    <p class="note" data-reveal data-state-note="payout-table">pending</p>
+  </div>
+</section>
+
+<section class="stage stage--air" id="board" aria-labelledby="board-h">
+  <div class="wrap">
+    <div class="boardhead" data-reveal>
+      <div class="head">
+        <p class="kicker">Live board</p>
+        <h2 id="board-h">The ten busiest Solana pairs, right now.</h2>
+        <p class="lead">Sorted by 24h volume from public DEX feeds and refreshed every minute. Listings are shown as seen, not endorsed.</p>
+      </div>
+      <p class="pill" data-feed="idle"><span class="dot" aria-hidden="true"></span><span data-feed-text>Reaching the board</span></p>
+    </div>
+    <div class="board" role="table" aria-label="Ten busiest Solana pairs by 24h volume" data-reveal>
+      <div class="brow brow--head" role="row"><span role="columnheader">#</span><span role="columnheader">Token</span><span role="columnheader" class="r">Price</span><span role="columnheader" class="r">24h</span><span role="columnheader" class="r">Volume</span><span role="columnheader" class="r">Liquidity</span><span role="columnheader" class="sr">Copy</span></div>
+      <div role="rowgroup" data-board></div>
+      <p class="boardmsg" data-board-msg role="status" hidden></p>
+    </div>
+  </div>
+</section>
+
+<section class="stage stage--cyan" id="compare" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <p class="kicker">Compare</p>
+      <h2 id="cmp-h">Parking shares with a lender is flat. Cycles can flex.</h2>
+      <p class="lead">One set of shares, two routes for turning them into returns.</p>
+    </div>
+    <div class="cmp" data-reveal data-table="compare-table" data-state="absent">
+      <div class="tr tr--head"><span>Aspect</span><span data-cmp-other>Lender-style</span><span>XYLO</span></div>
+      <div class="tr spot" data-row><span>Yearly range</span><span class="num" data-c="other">—</span><span class="num" data-c="xylo">—</span></div>
+      <div class="tr spot" data-row><span>Assets covered</span><span class="num" data-c="other">—</span><span class="num" data-c="xylo">—</span></div>
+      <div class="tr spot" data-row><span>Where shares reside</span><span class="num" data-c="other">—</span><span class="num" data-c="xylo">—</span></div>
+      <div class="tr spot" data-row><span>Peak multiple</span><span class="num" data-c="other">—</span><span class="num" data-c="xylo">—</span></div>
+    </div>
+    <p class="note" data-reveal data-state-note="compare-table">pending</p>
+  </div>
+</section>
+
+<section class="stage stage--azure" id="token" aria-labelledby="tok-h">
+  <div class="wrap">
+    <div class="head head--c" data-reveal>
+      <p class="kicker">Built for Solana</p>
+      <h2 id="tok-h">Meet the XYLO token.</h2>
+      <p class="lead">A single address, shown whole. Copy the string here and compare it character by character prior to acting.</p>
+    </div>
+    <div class="tokencard spot tokencard--top" data-reveal>
+      <div class="ca ca--plain" data-slot="ca" data-state="absent">
+        <span class="ca__label" data-ca-label>Mint address</span>
+        <div class="tokenrow">
+          <span class="ca__value" data-ca-value data-pending="true"><span class="ca__bar" aria-hidden="true"></span><span>pending</span></span>
+          <button class="copy" type="button" data-ca-copy disabled aria-disabled="true" aria-label="Copy mint address, pending"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span data-copy-text>Copy</span></button>
+        </div>
+      </div>
+      <p class="verify" data-verify role="status"></p>
+      <div class="links" data-explorers>
+        <span class="btn" data-explorer="dexscreener" aria-disabled="true">DexScreener · pending</span>
+        <span class="btn" data-explorer="solscan" aria-disabled="true">Solscan · pending</span>
+      </div>
+      <p class="note note--flush">This token operates independently of the pools: using them never requires owning it. Rely only on the address printed on this page, plus official channels. Nothing here is financial guidance, and digital assets can lose value.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stage stage--ice" id="answers" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="head head--c" data-reveal>
+      <p class="kicker">Answers</p>
+      <h2 id="faq-h">Straight answers.</h2>
+    </div>
+    <div class="faq" data-stagger>
+      <details data-reveal><summary>So what does XYLO do?</summary><p class="ans">It is designed to let holders of on-chain equities lock them into a pool, receive an advance as each cycle opens, and stay exposed to price swings of what they locked.</p></details>
+      <details data-reveal><summary>Where does the advance come from?</summary><p class="ans">From counterparties who make offers for the upside you agree to give up. If offers come in too low, the pool can skip a cycle.</p></details>
+      <details data-reveal><summary>Price rallies, then what?</summary><p class="ans">You capture gains as far as the line you chose. Anything beyond that line is claimed by the winning counterparty.</p></details>
+      <details data-reveal><summary>And if it drops?</summary><p class="ans">The advance softens the blow slightly, but you continue to carry the decline of the underlying shares, as any owner would.</p></details>
+      <details data-reveal><summary>Is leaving early possible?</summary><p class="ans">The plan is to let you exit at a cycle boundary, with a request window ahead of cut-off. Details will be confirmed ahead of launch.</p></details>
+      <details data-reveal><summary>Is there a cost?</summary><p class="ans">No pricing is set yet. Any cost will be published ahead of taking effect.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot__row">
+    <a class="brand" href="#hero" aria-label="XYLO, return to start"><img src="assets/logo-x-192.png" width="30" height="30" alt=""><span>XYLO</span></a>
+    <nav aria-label="Footer"><a href="#mechanics">Mechanics</a><a href="#payouts">Payouts</a><a href="#board">Board</a><a href="#compare">Compare</a><a href="#token">Token</a><a href="#answers">Answers</a></nav>
+    <span class="chip" data-domain>usexylo.fun</span>
+  </div>
+  <p>XYLO is an early-stage build. Nothing on this page is financial guidance, a promise of return, or an offer. Digital assets can lose value, including all of it.</p>
+</footer>
+</body>
+</html>

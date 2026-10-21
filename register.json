@@ -1,0 +1,108 @@
+{
+  "_rules": "state is stated, absent or unconfirmed. absent and unconfirmed records are inert: they must not carry value or url. Dates live here as data and are never rendered.",
+  "records": {
+    "chain": {
+      "state": "stated",
+      "label": "Chain",
+      "name": "Solana",
+      "rpc": "https://solana-rpc.publicnode.com",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "domain": {
+      "state": "stated",
+      "label": "Domain",
+      "value": "usexylo.fun",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "ca": {
+      "state": "absent",
+      "label": "Mint address",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "x": {
+      "state": "absent",
+      "label": "X",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "github": {
+      "state": "absent",
+      "label": "GitHub",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "market": {
+      "state": "stated",
+      "label": "Live market",
+      "boosts": "https://api.dexscreener.com/token-boosts/top/v1",
+      "pairs": "https://api.dexscreener.com/tokens/v1/solana/",
+      "source": "client statement",
+      "scope": "batch-level",
+      "recorded": "2026-10-21"
+    },
+    "stat-locked": {
+      "state": "absent",
+      "label": "Value locked"
+    },
+    "stat-holders": {
+      "state": "absent",
+      "label": "Participants"
+    },
+    "stat-pools": {
+      "state": "absent",
+      "label": "Open pools"
+    },
+    "stat-round": {
+      "state": "absent",
+      "label": "Round volume"
+    },
+    "mode-steady": {
+      "state": "absent",
+      "label": "Advance rate"
+    },
+    "mode-patient": {
+      "state": "absent",
+      "label": "Advance rate"
+    },
+    "mode-twostep": {
+      "state": "absent",
+      "label": "Advance rate"
+    },
+    "mode-desk": {
+      "state": "absent",
+      "label": "Leading offer"
+    },
+    "step-lock": {
+      "state": "absent",
+      "label": "Sample size"
+    },
+    "step-reach": {
+      "state": "absent",
+      "label": "Sample reach"
+    },
+    "step-receive": {
+      "state": "absent",
+      "label": "Sample advance"
+    },
+    "series-cycles": {
+      "state": "absent",
+      "label": "Cycle series"
+    },
+    "payout-table": {
+      "state": "absent",
+      "label": "Payout table"
+    },
+    "compare-table": {
+      "state": "absent",
+      "label": "Comparison"
+    }
+  }
+}
